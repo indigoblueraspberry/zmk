@@ -228,14 +228,14 @@ static int behavior_caps_word_init(const struct device *dev) {
 #define KP_INST(n)                                                                                 \
     static struct behavior_caps_word_data behavior_caps_word_data_##n = {.active = false};         \
     static struct caps_word_item_array continuations_##n = {                                       \
-        .members = {UTIL_LISTIFY(DT_INST_PROP_LEN(n, continue_list), BREAK_ITEM, n)},              \
+        .members = {Z_UTIL_LISTIFY_2(DT_INST_PROP_LEN(n, continue_list), BREAK_ITEM, n)},              \
         .length = DT_INST_PROP_LEN(n, continue_list)};                                             \
     static struct caps_word_item_array also_mod_list_##n = {                                       \
-        .members = {UTIL_LISTIFY(DT_INST_PROP_LEN(n, also_mod_list), BREAK_ITEM_2, n)},            \
+        .members = {Z_UTIL_LISTIFY_2(DT_INST_PROP_LEN(n, also_mod_list), BREAK_ITEM_2, n)},            \
         .length = DT_INST_PROP_LEN(n, also_mod_list),                                              \
     };                                                                                             \
     static struct caps_word_item_array break_list_##n = {                                          \
-        .members = {UTIL_LISTIFY(DT_INST_PROP_LEN(n, break_list), BREAK_ITEM_3, n)},               \
+        .members = {Z_UTIL_LISTIFY_2(DT_INST_PROP_LEN(n, break_list), BREAK_ITEM_3, n)},               \
         .length = DT_INST_PROP_LEN(n, break_list),                                                 \
     };                                                                                             \
     static struct behavior_caps_word_config behavior_caps_word_config_##n = {                      \
